@@ -21,8 +21,8 @@ export default function Navbar() {
     <nav className="fixed top-0 w-full z-[100] bg-slate-950/90 backdrop-blur-md border-b border-white/5">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         
-        {/* LOGO */}
-        <Link href="/" className="group z-50">
+        {/* LOGO - Ditambah z-50 agar tetap di depan */}
+        <Link href="/" className="group z-[1001]">
           <div className="font-black text-xl uppercase tracking-tighter leading-none text-white">
             BINTANG<span className="text-yellow-500"> PERKASA</span>
           </div>
@@ -66,14 +66,14 @@ export default function Navbar() {
         {/* --- MOBILE MENU TOGGLE --- */}
         <button 
           onClick={() => setIsMenuOpen(!isMenuOpen)} 
-          className="md:hidden text-yellow-500 font-black text-xs uppercase tracking-widest z-50 border border-yellow-500/30 px-3 py-1 rounded"
+          className="md:hidden text-yellow-500 font-black text-xs uppercase tracking-widest z-[1001] border border-yellow-500/30 px-4 py-2 rounded bg-slate-900 shadow-xl"
         >
-          {isMenuOpen ? 'Tutup' : 'Menu'}
+          {isMenuOpen ? 'TUTUP' : 'MENU'}
         </button>
 
-        {/* --- MOBILE MENU OVERLAY (REVISI: Ditambah tombol Email) --- */}
+        {/* --- MOBILE MENU OVERLAY (PERBAIKAN: z-index ditingkatkan jadi 1000) --- */}
         {isMenuOpen && (
-          <div className="fixed inset-0 bg-slate-950 flex flex-col items-center justify-center space-y-8 z-40 animate-in fade-in duration-300">
+          <div className="fixed inset-0 bg-slate-950 flex flex-col items-center justify-center space-y-8 z-[1000] animate-in fade-in duration-300">
             {menuItems.map((item) => (
               <Link 
                 key={item.path} 
@@ -92,13 +92,13 @@ export default function Navbar() {
                 href="https://wa.me/6281231189475" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="bg-yellow-500 text-black py-4 rounded-full font-black uppercase tracking-widest text-center text-xs shadow-xl active:scale-95 transition-all"
+                className="bg-yellow-500 text-black py-4 rounded-full font-black uppercase tracking-widest text-center text-sm shadow-xl active:scale-95 transition-all"
               >
                 WhatsApp Kami
               </a>
               <a 
                 href="mailto:rian.metrosinar@gmail.com" 
-                className="border border-white/20 text-white py-4 rounded-full font-black uppercase tracking-widest text-center text-xs active:scale-95 transition-all"
+                className="border-2 border-white text-white py-4 rounded-full font-black uppercase tracking-widest text-center text-sm active:scale-95 transition-all"
               >
                 Email Perusahaan
               </a>
