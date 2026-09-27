@@ -51,6 +51,31 @@ export default function PortfolioPage() {
 
         {/* GRID UTAMA */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <Link
+            href="/portfolio/renovasi-improvement-guntner-indonesia"
+            className="group bg-slate-900 border border-yellow-500/30 rounded-xl overflow-hidden hover:border-yellow-500 transition-all"
+          >
+            <div className="relative h-56 overflow-hidden bg-slate-800">
+              <Image
+                src="/images/guntner-indonesia/cover.jpg"
+                alt="Renovasi & Improvement PT. Güntner Indonesia"
+                fill
+                className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+              />
+              <div className="absolute top-4 right-4 bg-yellow-500 text-black px-3 py-1 font-bold text-[10px] rounded uppercase">
+                Proyek Terbaru
+              </div>
+            </div>
+            <div className="p-5">
+              <h3 className="font-bold text-sm md:text-base group-hover:text-yellow-500 transition-colors uppercase">
+                Renovasi &amp; Improvement PT. Güntner Indonesia
+              </h3>
+              <p className="text-blue-400 text-[10px] font-bold uppercase mt-2">
+                Lihat 65 foto &amp; 2 video →
+              </p>
+            </div>
+          </Link>
+
           {projects.map((p) => (
             <div 
               key={p.id} 
